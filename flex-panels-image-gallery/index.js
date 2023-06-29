@@ -1,7 +1,17 @@
 const panels = document.querySelectorAll(".panel");
 
 /* const toggleOpen = (event) => {
-  event.target.classList.toggle("open");
+  const panel = event.target;
+  if (panel.classList.contains("open")) {
+    panel.classList.remove("open");
+  } else {
+    panel.classList.add("open");
+  }
+}; */
+
+/* const toggleOpen = (event) => {
+  console.log(event.target.classList);
+  event.target.classList.add("open");
 }; */
 
 const toggleActive = (event) => {
@@ -12,11 +22,11 @@ const toggleActive = (event) => {
 };
 
 function toggleOpen(event) {
+  console.log(event.target.classList);
   this.classList.toggle("open");
 }
 
-/* 
-function toggleActive(event) {
+/* function toggleActive(event) {
   console.log(event.propertyName);
   if (event.propertyName.includes("flex")) {
     this.classList.toggle("open-active");
