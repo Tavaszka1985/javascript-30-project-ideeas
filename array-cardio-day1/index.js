@@ -65,14 +65,14 @@ const people = [
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
 
-const inv = inventors.filter(
-  (inventor) => inventor.year >= 1500 && inventor.year < 1600 /* {
-    if (inventor.year >= 1500 && inventor.year < 1600) {
-      return true; //longer version
-    }
-  } */
+/* const inv = inventors.filter(
+  (inventor) => inventor.year >= 1500 && inventor.year < 1600  {
+ //   if (inventor.year >= 1500 && inventor.year < 1600) {
+ //     return true; //longer version
+ //   }
+ // } 
 );
-console.table(inv);
+console.table(inv); */
 
 // Array.prototype.map()
 // 2. Give us an array of the inventors first and last names
@@ -124,19 +124,28 @@ console.table(oldest); */
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-const category = document.querySelector(".mw-category");
+/* const category = document.querySelector(".mw-category");
 const links = [...category.querySelectorAll("a")]; // or Array.from(category.querySelectorAll('a'))
 const de = links.map((link) => link.textContent);
 console.log(de);
 
 const filteredDe = de.filter((streetName) => streetName.includes("de"));
-console.log(filteredDe);
+console.log(filteredDe); */
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
 
+/* const alpha = people.sort((lastOne, nextOne) => {
+  const [alastName, afirstName] = lastOne.split(", ");
+  const [blastName, bfirstName] = nextOne.split(", ");
+  return alastName.localeCompare(blastName);
+});
+
+console.log(alpha); */
+
 // 8. Reduce Exercise
 // Sum up the instances of each of these
+
 const data = [
   "car",
   "car",
@@ -153,3 +162,16 @@ const data = [
   "car",
   "truck",
 ];
+
+const transportation = data.reduce((obj, item) => {
+  if (!obj[item]) {
+    obj[item] = 0;
+    console.log("created the new item ", obj[item]);
+  }
+  obj[item]++;
+  console.log("increased ", item, obj[item]);
+
+  return obj;
+}, {});
+
+console.log(transportation);
